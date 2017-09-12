@@ -104,3 +104,57 @@ version 1.35    Author-year bib style now uses square brackets.
 		Changed defaults for TOG sample
 		Price is suppressed for usgov and rightsretained modes.
 		Bugs fixed
+
+Version 1.36    Bug fixes
+		Moved PACMPL to acmlarge format
+		New journal: PACMHCI
+		Added the possibility to adjust number of author
+		boxes per row in conference formats
+		
+Version 1.37    Reduce list indentation (Matthew Fluet)
+
+Version 1.38    Increase default font size for SIGPLAN
+
+Version 1.39    Added \authornotemark commmand
+
+Version 1.40    Bibliography changes
+		Added processing of one-compoment ccsdesc nodes
+		Bug fixes.
+		Made the height a multiple of \baselineskip + \topskip
+		Added cleveref
+		We no longer print street address in SIGs
+
+Version 1.41    Rearranged bib files
+		Added new badges
+
+Version 1.42    Deleted ACM badges
+		Bug fixes
+
+Version 1.43    Bug fixes
+
+Version 1.44    Bug fixes.
+		Empty DOI and ISBN suppress printing DOI or ISBN lines
+		Separated theorem code into acmthm.sty, loaded by default.
+		Article number can be set for proceedings.
+		New commands: \acmBooktile, \editor.
+		Reference citation format updated.
+
+Version 1.45    Workaround for a Libertine bug.  Thanks to LianTze Lim
+		from Overleaf
+
+Version 1.46    Bug fixes for bibliography:  label width is now calculated
+		correctly.
+		All PACM now use screen option.  This requires etoolbox.
+		Added subtitle to ACM reference format.
+		Now acmart is compatible with fontspec.
+		\thanks is now obsolete.  The addresses are automatically
+		added to the journal version;  this can be overriden with
+		\authorsaddresses command.
+		Deleted the rule at the end of frontmatter for all formats.
+		Deleted new line before doi in the reference format.
+		Reintegrated theorem code into acmart.dtx (Matthew Fluet)
+
+Version 1.47    New journal:  THRI
+
+Version 1.48    Bug fixes
+		Review mode now switches on folios

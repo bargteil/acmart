@@ -12,7 +12,7 @@
 \IncMargin{-\parindent}
 
 % Metadata Information
-\acmJournal{POMACS}
+\acmJournal{PACMHCI}
 \acmVolume{9}
 \acmNumber{4}
 \acmArticle{39}
@@ -47,7 +47,10 @@
 % Title portion
 \title{A Multifrequency MAC Specially Designed for Wireless Sensor
   Network Applications} 
+\titlenote{We can add a note to the title}
+
 \author{Gang Zhou}
+\authornote{This is the corresponding author}
 \orcid{1234-5678-9012-3456}
 \affiliation{%
   \institution{College of William and Mary}
@@ -56,7 +59,38 @@
   \state{VA}
   \postcode{23185}
   \country{USA}}
-\author{Yafeng Wu}
+\email{gang_zhou@wm.edu}
+\author{Valerie B\'eranger}
+\affiliation{%
+  \institution{Inria Paris-Rocquencourt}
+  \city{Rocquencourt}
+  \country{France}
+}
+\email{beranger@inria.fr}
+\author{Aparna Patel} 
+\affiliation{%
+ \institution{Rajiv Gandhi University}
+ \streetaddress{Rono-Hills}
+ \city{Doimukh} 
+ \state{Arunachal Pradesh}
+ \country{India}}
+\email{aprna_patel@rguhs.ac.in}
+\author{Huifen Chan}
+\affiliation{%
+  \institution{Tsinghua University}
+  \streetaddress{30 Shuangqing Rd}
+  \city{Haidian Qu} 
+  \state{Beijing Shi}
+  \country{China}
+}
+\email{chan0345@tsinghua.edu.cn}
+\author{Ting Yan}
+\affiliation{%
+  \institution{Eaton Innovation Center}
+  \city{Prague}
+  \country{Czech Republic}}
+\email{yanting02@gmail.com}
+\author{Tian He}
 \affiliation{%
   \institution{University of Virginia}
   \department{School of Engineering}
@@ -65,15 +99,10 @@
   \postcode{22903}
   \country{USA}
 }
-\author{Ting Yan}
-\affiliation{%
-  \institution{Eaton Innovation Center}
-  \city{Prague}
-  \country{Czech Republic}}
-\author{Tian He}
 \affiliation{%
   \institution{University of Minnesota}
   \country{USA}}
+\email{tinghe@uva.edu}
 \author{Chengdu Huang}
 \author{John A. Stankovic}
 \author{Tarek F. Abdelzaher}
@@ -85,6 +114,7 @@
   \postcode{22903}
   \country{USA}
 }
+
 
 
 \begin{abstract}
@@ -152,21 +182,23 @@ synchronization errors.
 \keywords{Wireless sensor networks, media access control,
 multi-channel, radio interference, time synchronization}
 
-
-\thanks{This work is supported by the National Science Foundation,
-  under grant CNS-0435060, grant CCR-0325197 and grant EN-CS-0329609.
-
-  Author's addresses: G. Zhou, Computer Science Department, College of
-  William and Mary; Y. Wu {and} J. A. Stankovic, Computer Science
-  Department, University of Virginia; T. Yan, Eaton Innovation Center;
-  T. He, Computer Science Department, University of Minnesota; C.
-  Huang, Google; T. F. Abdelzaher, (Current address) NASA Ames
-  Research Center, Moffett Field, California 94035.}
-
+% DO NOT use this command unless you want to change
+% the default behavior
+% \authorsaddresses{Authors' addresses: G.~Zhou, Computer Science
+%   Department, College of William and Mary, 104 Jameson Rd,
+%   Williamsburg, PA 23185, US, \path{gzhou@wm.edu}; V.~B\'eranger,
+%   Inria Paris-Rocquencourt, Rocquencourt, France; A.~Patel, Rajiv
+%   Gandhi University, Rono-Hills, Doimukh, Arunachal Pradesh, India;
+%   H.~Chan, Tsinghua University, 30 Shuangqing Rd, Haidian Qu, Beijing
+%   Shi, China; T.~Yan, Eaton Innovation Center, Prague, Czech Republic;
+%   T.~He, C.~Huang, J.~A.~Stankovic University of Virginia, School of
+%   Engineering Charlottesville, VA 22903, USA; T. F. Abdelzaher,
+%   (Current address) NASA Ames Research Center, Moffett Field,
+%   California 94035.}
 
 \maketitle
 
-% The default list of authors is too long for headers}
+% The default list of authors is too long for headers.
 \renewcommand{\shortauthors}{G. Zhou et al.}
 
 \input{samplebody-journals}
