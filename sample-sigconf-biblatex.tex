@@ -1,4 +1,20 @@
-\documentclass[sigchi, review]{acmart}
+\documentclass[sigconf,natbib=false]{acmart}
+
+%drt24 hacks
+% Letter paper
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+
+% Hack to try to make acmart work with biblatex: https://tex.stackexchange.com/questions/37076/is-it-possible-to-load-biblatex-with-a-class-that-has-already-loaded-natbib
+\let\citename\relax
+\RequirePackage[abbreviate=true, dateabbrev=true, isbn=true, doi=true, urldate=comp, url=true, maxbibnames=9, backref=false, backend=biber, style=ACM-Reference-Format, language=american]{biblatex}
+
+
+
+
+\addbibresource{sample-bibliography-biblatex.bib}
+\renewcommand{\bibfont}{\Small}
+
 
 \usepackage{booktabs} % For formal tables
 
@@ -7,13 +23,12 @@
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
 %\setcopyright{acmlicensed}
-%\setcopyright{rightsretained}
+\setcopyright{rightsretained}
 %\setcopyright{usgov}
 %\setcopyright{usgovmixed}
 %\setcopyright{cagov}
-\setcopyright{licensedcagov}
 %\setcopyright{cagovmixed}
-%\setcopyright{licensedothergov}
+
 
 % DOI
 \acmDOI{10.475/123_4}
@@ -37,6 +52,7 @@
 \subtitle{Extended Abstract}
 \subtitlenote{The full version of the author's guide is available as
   \texttt{acmart.pdf} document}
+
 
 \author{Ben Trovato}
 \authornote{Dr.~Trovato insisted his name be first.}
@@ -90,7 +106,8 @@
   \streetaddress{30 Shuangqing Rd}
   \city{Haidian Qu}
   \state{Beijing Shi}
-  \country{China}}
+  \country{China}
+}
 
 \author{Charles Palmer}
 \affiliation{%
@@ -109,14 +126,14 @@
 \affiliation{\institution{The Kumquat Consortium}}
 \email{jpkumquat@consortium.net}
 
-% The default list of authors is too long for headers.
+% The default list of authors is too long for headers}
 \renewcommand{\shortauthors}{B. Trovato et al.}
 
 
 \begin{abstract}
 This paper provides a sample of a \LaTeX\ document which conforms,
 somewhat loosely, to the formatting guidelines for
-ACM SIG Proceedings.
+ACM SIG Proceedings.\footnote{This is an abstract footnote}
 \end{abstract}
 
 %
@@ -157,18 +174,12 @@ ACM SIG Proceedings.
 
 \keywords{ACM proceedings, \LaTeX, text tagging}
 
-\begin{teaserfigure}
-  \includegraphics[width=\textwidth]{sampleteaser}
-  \caption{This is a teaser}
-  \label{fig:teaser}
-\end{teaserfigure}
-
 
 \maketitle
 
 \input{samplebody-conf}
 
-\bibliographystyle{ACM-Reference-Format}
-\bibliography{sample-bibliography}
+\printbibliography
+
 
 \end{document}

@@ -15,9 +15,10 @@ SAMPLES = \
 	sample-acmtog.tex \
 	sample-sigconf.tex \
 	sample-sigconf-authordraft.tex \
+	sample-sigconf-xelatex.tex \
 	sample-sigplan.tex \
 	sample-sigchi.tex \
-	sample-sigchi-a.tex 
+	sample-sigchi-a.tex
 
 
 PDF = $(PACKAGE).pdf ${SAMPLES:%.tex=%.pdf} acmguide.pdf
@@ -41,9 +42,9 @@ acmguide.pdf: $(PACKAGE).dtx $(PACKAGE).cls
 	- bibtex acmguide
 	pdflatex -jobname acmguide $(PACKAGE).dtx
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' acmguide.log) \
-	do 	pdflatex -jobname acmguide $(PACKAGE).dtx; done
+	do pdflatex -jobname acmguide $(PACKAGE).dtx; done
 
-%.cls:   %.ins %.dtx  
+%.cls:   %.ins %.dtx
 	pdflatex $<
 
 %.pdf:  %.tex   $(PACKAGE).cls ACM-Reference-Format.bst
@@ -54,6 +55,14 @@ acmguide.pdf: $(PACKAGE).dtx $(PACKAGE).cls
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
 	do pdflatex $<; done
 
+sample-sigconf-xelatex.pdf:  sample-sigconf-xelatex.tex   $(PACKAGE).cls ACM-Reference-Format.bst
+	xelatex $<
+	- bibtex $*
+	xelatex $<
+	xelatex $<
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
+	do xelatex $<; done
+
 sample-manuscript.pdf \
 sample-acmsmall.pdf \
 sample-acmlarge.pdf \
@@ -61,6 +70,7 @@ sample-acmtog.pdf: samplebody-journals.tex
 
 sample-sigconf.pdf \
 sample-sigconf-authordraft.pdf \
+sample-sigconf-xelatex.pdf \
 sample-sigplan.pdf \
 sample-sigchi.pdf: samplebody-conf.tex
 
@@ -88,4 +98,4 @@ zip:  all clean
 	zip -r  $(PACKAGE).zip * -x '*~' -x '*.tgz' -x '*.zip' -x CVS -x 'CVS/*'
 
 documents.zip: all
-	zip $@ acmart.pdf acmguide.pdf sample-*.pdf
+	zip $@ acmart.pdf acmguide.pdf sample-*.pdf *.cls *.bst
