@@ -2032,18 +2032,18 @@ Computing Machinery]
 % \end{macro}
 %
 %
-% \begin{macro}{\if@ACM@oldfonts}
+% \begin{macro}{\if@ACM@freefonts}
 % \changes{v1.33}{2017/04/26}{Added macro}
-%   Whether we use old fonts
+%   Whether we allow users to choose fonts
 %    \begin{macrocode}
-\define@boolkey+{acmart.cls}[@ACM@]{oldfonts}[true]{%
-  \if@ACM@oldfonts
-    \PackageInfo{\@classname}{Using old fonts}%
+\define@boolkey+{acmart.cls}[@ACM@]{freefonts}[true]{%
+  \if@ACM@freefonts
+    \PackageInfo{\@classname}{Using user's fonts}%
   \else
-    \PackageInfo{\@classname}{Using new fonts}%
-  \fi}{\PackageError{\@classname}{Option oldfonts can be either true or
+    \PackageInfo{\@classname}{Using specified fonts}%
+  \fi}{\PackageError{\@classname}{Option freefonts can be either true or
     false}}
-\ExecuteOptionsX{oldfonts=false}
+\ExecuteOptionsX{freefonts=false}
 %    \end{macrocode}
 %
 % \end{macro}
@@ -2957,7 +2957,7 @@ Computing Machinery]
 % We use Libertine throughout.
 %    \begin{macrocode}
 \if@ACM@newfonts
-\if@ACM@oldfonts
+\if@ACM@freefonts
 \else
 \ifxetex
   \RequirePackage[tt=false]{libertine}
