@@ -2081,6 +2081,21 @@ Computing Machinery]
 %    \end{macrocode}
 %
 % \end{macro}
+% \begin{macro}{\if@ACM@flushleft}
+% \changes{v1.33}{2017/04/26}{Added macro}
+%   Whether we flush left for itemize and enumerate
+%    \begin{macrocode}
+\define@boolkey+{acmart.cls}[@ACM@]{flushleft}[true]{%
+  \if@ACM@flushleft
+    \PackageInfo{\@classname}{Using flush left for itemize and enumerate}%
+  \else
+    \PackageInfo{\@classname}{Using indentation for itemize and enumerate}%
+  \fi}{\PackageError{\@classname}{Option flushleft can be either true or
+    false}}
+\ExecuteOptionsX{flushleft=false}
+%    \end{macrocode}
+%
+% \end{macro}
 % \begin{macro}{\if@ACM@fullsizebibfont}
 % \changes{v1.33}{2017/04/26}{Added macro}
 %   Whether we use full font size in bibliography
@@ -3181,7 +3196,9 @@ Computing Machinery]
 \AtBeginDocument{%
   \setlength\labelsep{4pt}
   \setlength{\@ACM@labelwidth}{6.5pt}
-
+  \if@ACM@flushleft
+  \setlength{\@ACM@labelwidth}{0pt}
+  \fi
   %% First-level list: when beginning after the first line of an
   %% indented paragraph or ending before an indented paragraph, labels
   %% should not hang to the left of the preceding/following text.
