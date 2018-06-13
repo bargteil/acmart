@@ -2049,6 +2049,23 @@ Computing Machinery]
 % \end{macro}
 %
 %
+% \begin{macro}{\if@ACM@libertinus}
+% \changes{v1.33}{2018/06/12}{Added macro}
+%   Whether we use libertinust1math
+%    \begin{macrocode}
+\define@boolkey+{acmart.cls}[@ACM@]{libertinus}[true]{%
+  \if@ACM@libertinus
+    \PackageInfo{\@classname}{Using libertinust1math}%
+  \else
+    \PackageInfo{\@classname}{Using new fonts}%
+  \fi}{\PackageError{\@classname}{Option libertinus can be either true or
+    false}}
+\ExecuteOptionsX{libertinus=false}
+%    \end{macrocode}
+%
+% \end{macro}
+%
+%
 % \begin{macro}{\if@ACM@boldparagraph}
 % \changes{v1.33}{2017/04/26}{Added macro}
 %   Whether we use bold paragraph and subsubsection headings
@@ -2948,7 +2965,12 @@ Computing Machinery]
   \RequirePackage[tt=false, type1=true]{libertine}
 \fi
 \RequirePackage[varqu]{zi4}
+\if@ACM@libertinus
+\RequirePackage[scaled=1.05]{libertinust1math}
+\def\LinuxLibertine@scale{1.0}
+\else
 \RequirePackage[libertine]{newtxmath}
+\fi
 \ifxetex\else
   \RequirePackage[T1]{fontenc}
 \fi
