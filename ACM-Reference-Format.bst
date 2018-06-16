@@ -1990,6 +1990,7 @@ FUNCTION { output.bibitem }
   "}" writeln
   "\natexlab{[" write$
   calc.basic.label write$
+  "~" write$
   sort.year write$
   "]~} %" writeln
   ""
