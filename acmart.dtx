@@ -6329,8 +6329,12 @@ Computing Machinery]
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\parindent}%
   {-.5\baselineskip \@plus -2\p@ \@minus -.2\p@}%
   {-3.5\p@}%
-  {\@parfont\@adddotafter}}
   {\ACM@NRadjust{\@parfont\@adddotafter}}}
+\renewcommand\part{\@startsection{part}{9}{\z@}%
+  {-10\p@ \@plus -4\p@ \@minus -2\p@}%
+  {4\p@}%
+  {\ACM@NRadjust\@parfont}}
+
 \if@ACM@boldparagraph
 \newcommand\basicsubsubsection{\@startsection{subsubsection}{3}{0pt}%
   {-.5\baselineskip \@plus -2\p@ \@minus -.2\p@}%
@@ -6343,10 +6347,6 @@ Computing Machinery]
   {\ACM@NRadjust{\@parfont\@adddotafter}}}
 \fi
 
-\renewcommand\part{\@startsection{part}{9}{\z@}%
-  {-10\p@ \@plus -4\p@ \@minus -2\p@}%
-  {4\p@}%
-  {\ACM@NRadjust\@parfont}}
 %    \end{macrocode}
 %
 % \begin{macro}{\section@raggedright}
